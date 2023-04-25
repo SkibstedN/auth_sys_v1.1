@@ -34,7 +34,9 @@ const pool = mysql.createPool({
     }
   }
 
-  app.get("/test-db-connection", async (req, res) => {
+// Testing the database connection in a browser with http://localhost:5000/testDbConnection
+
+  app.get("/testDbConnection", async (req, res) => {
     const isConnected = await testDBConnection();
     if (isConnected) {
       res.status(200).json({ message: "Connected to the database." });
