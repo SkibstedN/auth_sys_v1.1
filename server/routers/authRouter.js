@@ -1,6 +1,7 @@
 import { Router } from "express";
 import bcrypt from "bcrypt";
 import pool from "../databases/connection.js";
+import { sendConfirmationEmail } from "../emailService.js";
 
 const router = Router();
 
@@ -17,6 +18,7 @@ router.post("/signup", async (req, res) => {
     ]);
 
     req.session.userId = result.insertId;
+    await sendConfirmationEmail(email, username);
     res.status(201).json({ message: "User created successfully" });
   } catch (error) {
     console.error(error);
