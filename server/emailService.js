@@ -3,8 +3,6 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-console.log("Email user:", process.env.EMAIL_USER);
-console.log("Email password:", process.env.EMAIL_PASSWORD);
 
 const transporter = nodemailer.createTransport({
   host: process.env.EMAIL_HOST,
