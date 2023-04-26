@@ -34,7 +34,7 @@ const pool = mysql.createPool({
     }
   }
 
-// Testing the database connection in a browser with http://localhost:5000/testDbConnection
+// Testing the database connection in a browser with http://localhost:{PORT}/testDbConnection
 
   app.get("/testDbConnection", async (req, res) => {
     const isConnected = await testDBConnection();
