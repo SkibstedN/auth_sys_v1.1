@@ -17,7 +17,7 @@
 
       if (response.ok) {
         const data = await response.json();
-        const username = data.user.username;
+        const username = data.user;
 
         // Update both stores
         user.set({ email, username });
