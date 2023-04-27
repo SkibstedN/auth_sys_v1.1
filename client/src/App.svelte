@@ -10,6 +10,9 @@
   import SignUp from './components/SignUp.svelte';
   import Login from './components/Login.svelte';
   import Logout from './components/Logout.svelte';
+  import PrivateRoute from "./components/PrivateRoute.svelte";
+  import Protected from '$src/pages/Protected.svelte';
+  import AnotherProtected from '$src/pages/AnotherProtected.svelte';
 </script>
 
 <main>
@@ -21,10 +24,14 @@
       <Link to="/signup">Sign Up</Link>
       <Link to="/login">Login</Link>
       <Link to="/logout">Logout</Link>
+      <Link to="/protected">Protected</Link>
+      <Link to="/another-protected">Another Protected</Link>
     </nav>
-    <Route path="/signup" component="{SignUp}" />
-    <Route path="/login" component="{Login}" />
-    <Route path="/logout" component="{Logout}" />
+    <Route path="/signup" component={SignUp} />
+    <Route path="/login" component={Login} />
+    <Route path="/logout" component={Logout} />
+    <Route path="/protected" component={Protected} />
+    <Route path="/another-protected" component={AnotherProtected} />
   </Router>
   
   <div>

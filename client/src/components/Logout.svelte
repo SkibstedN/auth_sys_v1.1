@@ -2,6 +2,9 @@
     import { onMount } from 'svelte';
     import { navigate } from 'svelte-navigator';
     import toastr from 'toastr';
+    import { user } from "../stores/userStore.js";
+
+    user.set(null);
   
     onMount(async () => {
       try {
