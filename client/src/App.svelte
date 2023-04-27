@@ -1,10 +1,32 @@
+<svelte:head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" />
+</svelte:head>
+
 <script>
   import svelteLogo from './assets/svelte.svg'
   import viteLogo from '/vite.svg'
-  import Counter from './lib/Counter.svelte'
+  //import Counter from './lib/Counter.svelte'
+  import { Router, Link, Route } from 'svelte-navigator';
+  import SignUp from './components/SignUp.svelte';
+  import Login from './components/Login.svelte';
+  import Logout from './components/Logout.svelte';
 </script>
 
 <main>
+
+  <h3>Velkommen til authapp, mandatory 2</h3>
+
+  <Router>
+    <nav>
+      <Link to="/signup">Sign Up</Link>
+      <Link to="/login">Login</Link>
+      <Link to="/logout">Logout</Link>
+    </nav>
+    <Route path="/signup" component="{SignUp}" />
+    <Route path="/login" component="{Login}" />
+    <Route path="/logout" component="{Logout}" />
+  </Router>
+  
   <div>
     <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
       <img src={viteLogo} class="logo" alt="Vite Logo" />
@@ -13,11 +35,11 @@
       <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
     </a>
   </div>
-  <h1>Vite + Svelte</h1>
+  
 
-  <div class="card">
+  <!--<div class="card">
     <Counter />
-  </div>
+  </div>-->
 
   <p>
     Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
